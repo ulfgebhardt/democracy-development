@@ -19,3 +19,6 @@
 [submodule "desktop"]
 	path = desktop
 	url = https://github.com/demokratie-live/democracy-desktop.git
+[submodule "democracy-admin"]
+	path = democracy-admin
+	url = https://github.com/demokratie-live/democracy-admin
