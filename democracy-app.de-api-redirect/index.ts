@@ -4,15 +4,18 @@ import request from "request";
 const app = express();
 
 app.all("*", (req, res) => {
-  console.log("R");
+  console.log(new Date(), "R");
   // const url = "http://localhost:8000/#/";
   const url = process.env.REDIRECT_URL!;
   return req
     .pipe(
-      request(url, { qs: req.query }).on("error", function (err) {
-        console.info(err);
-        return res.sendStatus(400);
-      })
+      request(url, { qs: req.query, headers: req.headers }).on(
+        "error",
+        function (err) {
+          console.info(err);
+          return res.sendStatus(400);
+        }
+      )
     )
     .pipe(res);
 });
