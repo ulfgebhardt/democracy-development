@@ -69,6 +69,7 @@ services:
   #     - mongodb
 
   democracy-app.de-api:
+    env_file: ./democracy-app.de-api-redirect/.env
     build: ./democracy-app.de-api-redirect
     container_name: democracy-app.de-api
     expose:
@@ -82,7 +83,6 @@ services:
       VIRTUAL_HOST: ${DOMAIN_DEMOCRACY_APP_DE_API:-api.democracy-app.de}
       LETSENCRYPT_HOST: ${DOMAIN_DEMOCRACY_APP_DE_API:-api.democracy-app.de}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-contact@democracy-deutschland.de}
-      REDIRECT_URL: https://internal.api.democracy-app.de
       PORT: 80
     networks:
       default:
