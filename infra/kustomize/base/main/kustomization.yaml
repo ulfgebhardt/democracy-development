@@ -21,4 +21,5 @@ resources:
   - import-named-poll-deputies.yaml
   - shedule-bio-resync.yaml
   - index-sync-democracy.yaml
+  - meilisearch-sync-democracy.yaml
   - index-sync-bundestagio.yaml

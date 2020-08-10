@@ -5,6 +5,7 @@ bases:
 resources:
   - mongo-headless-service.yaml
   - mongo-statefulset.yaml
+  - meilisearch-persistent-volume-claim.yaml
 
 patches:
   - patches/bundestagio-admin-depl.yaml
